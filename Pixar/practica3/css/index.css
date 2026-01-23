@@ -36,7 +36,7 @@ li, menu, summary {
      list-style-type: none;
  }
 
- .Wrapper {
+body {
      width: 100%;
      min-height: 100vh;
      background-color: var(--primary-color);
