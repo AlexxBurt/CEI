@@ -149,7 +149,7 @@ textarea {
         font-family: var(--primary-font);
         color: var(--color-primario);
         background-color: var(--color-secundario);
-        /* optional */ line-height: 1.4rem;
+        /* optional */ line-height: 22.4px;
         /* optional */ hyphens: auto;
         /* optional */ font-smooth: always;
         /* optional */ -webkit-font-smoothing: anialiased;
@@ -162,18 +162,18 @@ body {
 
 .u-h3 {
     font-family: var(--primary-font);
-    font-size: clamp(2.5em, 4vw, 3em);
+    font-size: clamp(1.8em, 3vw, 3em);
     line-height: 1em;
     font-weight: 900;
     text-transform: uppercase;
     text-wrap: wrap;
     color: var();
-    letter-spacing: -1.5px;
+    letter-spacing: -0.0938rem;
 }
 
 .u-h4 {
     font-family: var(--primary-font);
-    font-size: clamp(1.25em, 3.5vw, 1.65em);
+    font-size: clamp(19.2px, 2.3vw, 26.4px);
     line-height: 1em;
     font-weight: 900;
     text-transform: uppercase;
@@ -183,7 +183,7 @@ body {
 
 .u-p {
     font-family: var(--secondary-font);
-    font-size: clamp(.9em, 3vw, 1.1em);
+    font-size: clamp(.8em, 2.5vw, 1.1em);
     line-height: 1.6em;
     font-weight: 400;
     color: var(--color-text);
@@ -193,12 +193,12 @@ body {
     width: fit-content;
     min-height: auto;
     background-color: transparent;
-    padding: 1.5rem 6rem;
+    padding: 24px 96px;
     font-size: clamp(1em, 3vw, 1.1em);
     font-weight: 400;
     color: var(--color-primario);
-    border: 2px solid var(--color-primario);
-    border-radius: 50px;
+    border: .125rem solid var(--color-primario);
+    border-radius: 3.125rem;
     cursor: pointer;
 
     transition: all 1s;
@@ -231,13 +231,13 @@ body {
 
 .Header {
     width: 100%;
-    max-width: 50rem;
-    min-height: 2.8rem;
+    max-width: 800px;
+    min-height: 44.8px;
     background-color: var(--color-background);
-    margin: 2rem auto 0;
-    padding: 1rem 1.6rem;
-    border: 1px solid var(--color-enfasis);
-    border-radius: 50px;
+    margin: 32px auto 0;
+    padding: 16px 25.6px;
+    border: .0625rem solid var(--color-enfasis);
+    border-radius: 3.125rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -246,6 +246,46 @@ body {
     z-index: 2;
     position: fixed;
     top: 0;
+}
+
+.Menu{
+    background-color: var(--color-background);
+    width: 100%;
+    max-width: 33%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5rem 1fr;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    transform: translateX(100%);
+    transition: all .3s ease;
+}
+.Menu.isVisible{
+    transform: translateX(0);
+}
+.Menu-svg{
+    width: 10%;
+    justify-self: end;
+    transition: all .3s ease;
+}
+.Menu-svg:hover{
+    transform: rotate(360deg);
+}
+.Menu-ul{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-family: var(--secondary-font);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
 }
 
 .Header-h1{
@@ -257,26 +297,29 @@ body {
     min-height: auto;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 16px;
 }
 
-.Header-menu {
+.Header-svg {
     display: none;
 }
 
 .Header-a {
     width: fit-content;
     min-height: auto;
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     font-family: var(--secondary-font);
-    font-size: clamp(.8rem, 1vw, .9rem);
+    font-size: clamp(12.8px, 1vw, 14.4px);
     font-weight: 500;
 }
 
 .Header-a:hover {
     color: var(--color-aqua);
 }
-
+.Main{
+    position: relative;
+    overflow: hidden;
+}
 .Hero {
     width: 100%;
     min-height: 100vh;
@@ -307,38 +350,38 @@ body {
 
 .Hero-text {
     width: fit-content;
-    margin: .5rem auto;
+    margin: 8px auto;
     font-family: var(--primary-font);
     font-size: clamp(2em, 5vw, 5em);
     line-height: 1em;
     font-weight: 800;
-    letter-spacing: -2px;
+    letter-spacing: -0.125rem;
     text-transform: uppercase;
-    padding: .5rem 1.2rem;
-    border: 1px solid var(--color-enfasis);
-    border-radius: 100px;
+    padding: 8px 19.2px;
+    border: .0625rem solid var(--color-enfasis);
+    border-radius: 6.25rem;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 32px;
     align-items: center;
     justify-content: center;
 }
 
 .Hero-photo {
-    width: 5rem;
-    max-height: 5rem;
+    width: 80px;
+    max-height: 80px;
     border-radius: 50%;
 }
 
 .Hero-icon {
-    width: 5rem;
-    max-height: 5rem;
+    width: fit-content;
+    /* padding: 12%; */
     background-color: var(--color-enfasis);
     color: white;
-    border-radius: 50px;
+    border-radius: 50%;
     font-family: var(--secondary-font);
-    font-size: clamp(1.25em, 3vw, 1.5em);
-    font-weight: 300;
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 200;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,11 +392,11 @@ body {
     width: 100%;
     min-height: fit-content;
     background-image: url('../assets/agency9-home-bg2.webp');
-    padding: 6rem 3rem 14rem;
+    padding: 96px 48px 224px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 80px;
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -364,7 +407,7 @@ body {
     min-height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 48px;
     position: relative;
 }
 
@@ -373,14 +416,14 @@ body {
     min-height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 48px;
     position: sticky;
-    top: 8rem;
+    top: 128px;
     left: 0;
 }
 
 .Stats-p {
-    font-size: clamp(1rem, 3vw, 1.1rem);
+    font-size: clamp(16px, 3vw, 17.6px);
     color: var(--color-primario);
 }
 
@@ -389,16 +432,16 @@ body {
     min-height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.4rem;
+    gap: 22.4px;
 }
 
 .Stat {
     width: 100%;
-    min-height: 18rem;
+    min-height: 288px;
     background-color: var(--card-background);
-    padding: 3rem;
-    border: 1px solid var(--color-border);
-    border-radius: 28px;
+    padding: 48px;
+    border: .0625rem solid var(--color-border);
+    border-radius: 1.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -410,10 +453,10 @@ body {
 }
 
 .Stat-detail {
-    width: .9rem;
-    min-height: .9rem;
+    width: 14.4px;
+    min-height: 14.4px;
     background-color: var(--color-primario);
-    border-radius: 50px;
+    border-radius: 3.125rem;
     align-self: end;
 }
 
@@ -422,7 +465,7 @@ body {
     min-height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 32px;
 }
 
 .Stat-number {
@@ -439,32 +482,32 @@ body {
 .Works {
     width: 100%;
     min-height: auto;
-    padding: 3rem 3rem 0;
+    padding: 48px 48px 0;
     
 }
 .Works-portfolio {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem 2.5rem;
+    gap: 48px 40px;
 }
 
 .Works-project {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 24px;
     overflow: hidden;
 }
 
 .Works-image {
-    border-radius: 32px;
+    border-radius: 2rem;
     overflow: hidden;
 }
 
 .Works-photo {
     max-width: 100%;
-    min-height: 18rem;
+    min-height: 288px;
     background-color: #8589B2;
     transition: all .5s ease;
 }
@@ -476,7 +519,7 @@ body {
 .Works-text {
     font-size: clamp(.8em, 2vw, .9em);
     color: var(--color-primario);
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 16px;
 }
 
 
@@ -484,11 +527,11 @@ body {
     width: 100%;
     min-height: fit-content;
     background-image: url('../assets/agency9-home-bg3.webp');
-    padding: 6rem 3rem 14rem;
+    padding: 96px 48px 224px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 48px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -499,7 +542,7 @@ body {
     min-height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 32px;
     position: relative;
 }
 
@@ -508,7 +551,7 @@ body {
     min-height: fit-content;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 32px;
 }
 
 .Offer-sticky {
@@ -516,9 +559,9 @@ body {
     min-height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 48px;
     position: sticky;
-    top: 8rem;
+    top: 128px;
     left: 0;
 }
 
@@ -534,14 +577,14 @@ body {
 
 .Offer-service {
     width: 100%;
-    min-height: 28rem;
+    min-height: 448px;
     background-color: var(--card-background);
-    padding: 4rem;
-    border: 1px solid var(--color-border);
-    border-radius: 28px;
+    padding: 64px;
+    border: .0625rem solid var(--color-border);
+    border-radius: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 48px;
     justify-content: space-between;
     z-index: 0;
 }
@@ -559,13 +602,13 @@ body {
 }
 
 .Offer-icon {
-    width: 8rem;
+    width: 128px;
     justify-self: flex-end;
 }
 
 .Offer-p {
     width: 90%;
-    font-size: clamp(1em, 3vw, 1.2em);
+    font-size: clamp(16px, 2vw, 19.2px);
     color: var(--color-primario);
     text-wrap: wrap;
 }
@@ -574,11 +617,11 @@ body {
     width: fit-content;
     min-height: auto;
     background-color: transparent;
-    padding: 1.5rem 4rem;
+    padding: 24px 64px;
     font-size: clamp(1em, 2vw, 1.2em);
     font-weight: 300;
-    border: 2px solid var(--color-enfasis);
-    border-radius: 50px;
+    border: .125rem solid var(--color-enfasis);
+    border-radius: 3.125rem;
     cursor: pointer;
     z-index: 0;
     
@@ -613,19 +656,19 @@ body {
 
 .Team {
     width: 95%;
-    min-width: auto;
+    min-height: auto;
     background-image: url(../assets/agency9-home-bg4.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
     margin: 0 auto;
-    padding: 10rem 2rem 4rem;
+    padding: 160px 32px 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    border-radius: 50px;
-    gap: 2.5rem;
+    border-radius: 3.125rem;
+    gap: 40px;
 }
 
 .Team-h3 {
@@ -647,40 +690,40 @@ body {
     min-height: fit-content;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin: 4rem auto 2rem;
+    gap: 16px;
+    margin: 64px auto 32px;
 }
 
 .Team-person {
     width: 100%;
     min-height: fit-content;
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 40px;
+    backdrop-filter: blur(1.25rem);
+    border-radius: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 32px;
 }
 
 .Team-h4 {
     font-size: clamp(1.5em, 4vw, 1.7em);
     font-weight: 900;
-    margin: 3rem 3rem 0 0;
+    margin: 48px 48px 0 0;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 48px;
 }
 
 .Team-position {
     font-family: var(--secondary-font);
     font-size: clamp(.7em, 3.5vw, .9em);
     font-weight: 500;
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 48px;
 }
 
 .Team-photo {
-    min-height: 25rem;
+    min-height: 400px;
     justify-self: center;
 }
 
@@ -690,11 +733,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
-    padding: 10rem 3rem 8rem;
+    padding: 160px 48px 128px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 80px;
 }
 
 .Partners-col--sticky { 
@@ -702,9 +745,9 @@ body {
     max-height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 48px;
     position: sticky;
-    top: 8rem;
+    top: 128px;
     left: 0;
 }
 
@@ -715,9 +758,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    border: 1px solid #555990;
-    border-radius: 40px;
-    backdrop-filter: blur(25px);
+    border: .0625rem solid #555990;
+    border-radius: 2.5rem;
+    backdrop-filter: blur(1.5625rem);
     place-items: center;
     
 }
@@ -725,58 +768,59 @@ body {
 .Partners-logo{ 
     width: 100%;
     min-height: auto;
-    padding: 2rem 4rem;
-    border: 1px solid #555990;
+    padding: 32px 64px;
+    border: .0625rem solid #555990;
 }
 
 .Partners-svg {
-   width: 12rem;
+   width: 40%;
+   /* width: 192px */;
    justify-self: center;
 }
 
 .Partners-logo--corner1 {   
-    border-radius: 40px 0 0 0;
+    border-radius: 2.5rem 0 0 0;
 }
 
 .Partners-logo--corner2 {
-    border-radius: 0 40px 0 0;
+    border-radius: 0 2.5rem 0 0;
 }
 
 .Partners-logo--corner3 {   
-    border-radius: 0 0 0 40px;
+    border-radius: 0 0 0 2.5rem;
 }
 
 .Partners-logo--corner4 {   
-   border-radius: 0 0 40px 0;
+   border-radius: 0 0 2.5rem 0;
 }
 
 .Footer {
     width: 95%;
-    margin: 3rem auto;
+    margin: 48px auto;
     background-image: url(../assets/agency9-footer-bg1.webp);
-    padding: 6rem;
+    padding: 96px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
-    border: 1px solid var(--color-border);
-    border-radius: 40px;
+    gap: 48px;
+    border: .0625rem solid var(--color-border);
+    border-radius: 2.5rem;
 }
 
 .Footer-icon {
-    width: 5rem;
-    min-height: 5rem;
+    width: 80px;
+    min-height: 80px;
     justify-self: center;
 }
 
 .Footer-links {
     width: 100%;
     min-height: fit-content;
-    padding: 3rem;
+    padding: 48px;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 32px;
     justify-content: center;
     align-items: center;
 }
@@ -785,13 +829,13 @@ body {
     width: fit-content;
     min-height: auto;
     background-color: transparent;
-    padding: 2rem 4rem;
+    padding: 32px 64px;
     font-size: clamp(1.2em, 1.5vw, 2em);
     font-weight: 900;
     text-transform: uppercase;
     color: var(--color-primario);
-    border: 1px solid #555990;
-    border-radius: 50px;
+    border: .0625rem solid #555990;
+    border-radius: 3.125rem;
     cursor: pointer;
 }
 
@@ -802,15 +846,15 @@ body {
 .Footer-submenu {
     width: 100%;
     min-height: auto;
-    padding: 3rem;
-    border-top: 1px solid #555990;
-    border-bottom: 1px solid #555990;
+    padding: 48px;
+    border-top: .0625rem solid #555990;
+    border-bottom: .0625rem solid #555990;
 }
 
 .Footer-ul {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 16px;
     justify-content: center;
     align-items: center;
 }
@@ -818,11 +862,11 @@ body {
 .Footer-socials {
     width: fit-content;
     min-height: auto;
-    padding: .8rem 1.2rem;
+    padding: 12.8px 19.2px;
     background-color: #2E3361;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     font-family: var(--secondary-font);
-    font-size: clamp(.9em, 2vw, 1.1em);
+    font-size: clamp(.9em, 1vw, 1.1em);
     font-weight: 500;
     transition: all .3s ease;
 }
@@ -834,32 +878,38 @@ body {
 .Footer-copyright {
     width: 100%;
     font-family: var(--secondary-font);
-    font-size: clamp(1em, 3.5vw, 1.2em);
+    font-size: clamp(12.8px, 1.5vw, 1.2em);
     font-weight: 500;
     color: var(--color-primario);
     text-align: center;
     justify-content: center;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
 }
 
 .Footer-link {
     color: var(--color-aqua);
-    margin: 0 .3rem;
+    margin: 0 4.8px;
 }
 
 .Footer-link:hover {
     color: var(--color-enfasis);
 }
 
-@media (max-width: 960px) {
+
+@media (max-width: 1440px){
+    .Team-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 60rem) {
     .Header {
         width: 80%;
-        margin: 1rem auto 0;
-        padding: .7rem 1.5rem;
+        margin: 16px auto 0;
+        padding: 11.2px 24px;
     }
 
-    .Header-menu {
+    .Header-svg {
         display: block;
         width: auto;
     }
@@ -875,7 +925,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 1rem;
+        gap: 16px;
     }
 
     .Hero {
@@ -885,44 +935,44 @@ body {
 
     .Stats {
         flex-direction: column;
-        padding: 3rem 2rem 10rem;
-        gap: 2rem;
+        padding: 48px 32px 160px;
+        gap: 32px;
     }
 
 
     .Works {
-        padding: 2rem;
-        gap: 2.5rem 1.5rem;
+        padding: 32px;
+        gap: 40px 24px;
     }
 
     .Works-project {
-        gap: 1rem;
+        gap: 16px;
     }
 
     .Works-photo {
-       min-height: 10rem;
+       min-height: 160px;
     }
 
 
 
     .Offer {
         flex-direction: column;
-        padding: 5rem 2rem;
+        padding: 80px 32px;
     }
 
     .Offer-col--grid {
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        gap: 16px;
     }
 
     .Offer-service {
-        padding: 2rem;
+        padding: 32px;
     }
 
     .Offer-title {
         display: flex;
         flex-direction: column-reverse;
-        gap: 1.25rem;
+        gap: 20px;
     }
 
     .Offer-h4 {
@@ -931,37 +981,163 @@ body {
 
 
     .Team {
-        padding: 8rem 1rem .8rem;
+        padding: 128px 16px 12.8px;
     }
 
     .Team-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        gap: 16px;
     }
 
     .Team-photo {
-        min-height: 20rem;
+        min-height: 320px;
     }
 
 
     .Partners {
         flex-direction: column-reverse;
-        gap: 2.5rem;
+        gap: 40px;
     }
 
     .Partners-col--sticky {
         min-height: fit-content;
         position: static;
-        gap: 1rem;
+        gap: 16px;
     }
-
 }
 
+@media (max-width: 48rem){
+    .Stats{
+        max-width: 88%;
+        margin: 0 auto;
+    }
+    .Stats-sticky{
+        gap: 24px;
+    }
+    .Stats-p{
+        font-size: 12.8px;
+    }
+    .Stats-a{
+        padding: 16px 32px;
+    }
+    .Stats-grid{
+        grid-template-columns: 1fr;
+    }
+    .Stat{
+        padding: 32px;
+        min-height: 208px;
+    }
 
-@media (max-width: 480px) {
+    .Works{
+        width: 88%;
+        margin: 0 auto;
+    }
+    .Works-portfolio{
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+
+    .Offer{
+        max-width: 85%;
+        margin: 0 auto;
+    }
+    .Offer-sticky{
+        gap: 16px;
+        width: 100%;
+    }
+    .Offer-col--grid{
+        grid-template-columns: 1fr;
+    }
+    .Offer-service{
+        padding: 24px;
+        gap: 32px;
+        min-height: auto;
+    }
+    .Offer-icon{
+        width: 18%;
+    }
+    .Offer-text{
+        width: 100%;
+        font-size: 14.4px;
+    }
+    .Offer-a{
+        padding: 16px 64px;
+    }
+
+
+    .Team{
+        width: 80%;
+        padding: 48px 16px 16px;
+        gap: 24px;
+    }
+    .Team-a{
+        padding: 19.2px 32px;
+    }
+    .Team-grid{
+        grid-template-columns: 1fr;
+        margin: 48px 0;
+    }
+
+
+    .Partners{
+        max-width: 88%;
+        margin: 0 auto;
+    }
+    .Partners-grid{
+        grid-template-columns: 1fr;
+        border: .0625rem solid var(--color-border);
+    }
+    .Partners-logo{
+        padding: 32px 64px;
+        border: .0625rem solid var(--color-border);
+    }
+    .Partners-logo--corner1{
+        border-radius: 2.5rem 2.5rem 0 0;
+    }
+    .Partners-logo--corner2{
+        border-radius: 0;
+    }
+    .Partners-logo--corner3{
+        border-radius: 0;
+    }
+    .Partners-logo--corner4{
+        border-radius: 0 0 2.5rem 2.5rem;
+    }
+
+
+    .Footer{
+        width: 80%;
+        margin: 0 auto;
+        padding: 48px;
+        text-align: center;
+    }
+    .Footer-links{
+        flex-direction: column;
+        gap: 16px;
+    }
+    .Footer-a{
+        width: fit-content;
+        padding: 24px 32px;
+        font-size: clamp(.9em, 2.5vw, 1.5em);
+    }
+    .Footer-submenu{
+        display: none;
+    }
+    .Footer-copyright{
+        padding: 0;
+    }
+}
+
+@media (max-width: 30rem) {
     .Header {
         width: 80%;
-        margin: 1rem auto 0;
-        padding: .7rem 1.5rem;
+        margin: 16px auto 0;
+        padding: 11.2px 24px;
+    }
+
+    .Partners{
+        width: 100%;
+        padding: 16px;
     }
 }
