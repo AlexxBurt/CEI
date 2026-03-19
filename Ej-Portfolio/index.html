@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Intersection Observer</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="Page">
+    <!-- Sidebar Navigation -->
+    <nav class="Sidebar">
+        <div class="Sidebar-header">
+            <h1 class="Sidebar-logo">Portfolio</h1>
+        </div>
+        <ul class="Sidebar-menu">
+            <li class="Sidebar-item">
+                <a href="#hero" class="Sidebar-link">Inicio</a>
+            </li>
+            <li class="Sidebar-item">
+                <a href="#projects" class="Sidebar-link">Proyectos</a>
+            </li>
+            <li class="Sidebar-item">
+                <a href="#about" class="Sidebar-link">Acerca de</a>
+            </li>
+            <li class="Sidebar-item">
+                <a href="#contact" class="Sidebar-link">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="Page-main">
+        <!-- Hero Section -->
+        <section id="hero" class="Hero">
+            <div class="Hero-content">
+                <h1 class="Hero-title">Portfolio Moderno</h1>
+                <p class="Hero-subtitle">Descubre proyectos con Intersection Observer</p>
+                <a href="#projects" class="Hero-button">Explorar proyectos</a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="Projects">
+            <div class="Projects-container">
+                <div class="Projects-header">
+                    <h2 class="Projects-title">Proyectos Destacados</h2>
+                    <p class="Projects-description">Las tarjetas se animan cuando entran en vista</p>
+                </div>
+
+                <div class="Carousel">
+                    <article class="Card" data-label="project-1">
+                        <div class="Card-number">01</div>
+                        <h3 class="Card-title">Proyecto Uno</h3>
+                        <p class="Card-text">Diseño minimalista con atención al detalle.</p>
+                    </article>
+
+                    <article class="Card" data-label="project-2">
+                        <div class="Card-number">02</div>
+                        <h3 class="Card-title">Proyecto Dos</h3>
+                        <p class="Card-text">Cada elemento tiene un propósito específico.</p>
+                    </article>
+
+                    <article class="Card" data-label="project-3">
+                        <div class="Card-number">03</div>
+                        <h3 class="Card-title">Proyecto Tres</h3>
+                        <p class="Card-text">Intersection Observer detecta visibilidad.</p>
+                    </article>
+
+                    <article class="Card" data-label="project-4">
+                        <div class="Card-number">04</div>
+                        <h3 class="Card-title">Proyecto Cuatro</h3>
+                        <p class="Card-text">Scroll para activar las animaciones.</p>
+                    </article>
+
+                    <article class="Card" data-label="project-5">
+                        <div class="Card-number">05</div>
+                        <h3 class="Card-title">Proyecto Cinco</h3>
+                        <p class="Card-text">Último proyecto del carrusel.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="About">
+            <div class="About-container">
+                <h2 class="About-title">Acerca de</h2>
+                <p class="About-text">Portfolio construido con HTML, CSS y JavaScript siguiendo estándares W3C y metodología SUITCSS.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="Services">
+            <div class="Services-container">
+                <div class="Services-header">
+                    <h2 class="Services-title">Servicios</h2>
+                    <p class="Services-description">Especialidades en desarrollo web moderno</p>
+                </div>
+
+                <div class="Services-grid">
+                    <article class="Service" data-label="service-design">
+                        <h3 class="Service-title">Diseño Web</h3>
+                        <p class="Service-text">Interfaz minimalista y funcional adaptada a tus necesidades.</p>
+                    </article>
+
+                    <article class="Service" data-label="service-frontend">
+                        <h3 class="Service-title">Frontend</h3>
+                        <p class="Service-text">Desarrollo con HTML, CSS y JavaScript moderno.</p>
+                    </article>
+
+                    <article class="Service" data-label="service-responsive">
+                        <h3 class="Service-title">Responsive</h3>
+                        <p class="Service-text">Sitios que se adaptan perfectamente a todos los dispositivos.</p>
+                    </article>
+
+                    <article class="Service" data-label="service-performance">
+                        <h3 class="Service-title">Performance</h3>
+                        <p class="Service-text">Optimización y velocidad de carga garantizadas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="Skills">
+            <div class="Skills-container">
+                <h2 class="Skills-title">Habilidades</h2>
+
+                <div class="Skills-list">
+                    <div class="Skill" data-label="skill-html">
+                        <h4 class="Skill-name">HTML5</h4>
+                        <div class="Skill-bar">
+                            <div class="Skill-progress"></div>
+                        </div>
+                    </div>
+
+                    <div class="Skill" data-label="skill-css">
+                        <h4 class="Skill-name">CSS3</h4>
+                        <div class="Skill-bar">
+                            <div class="Skill-progress"></div>
+                        </div>
+                    </div>
+
+                    <div class="Skill" data-label="skill-javascript">
+                        <h4 class="Skill-name">JavaScript</h4>
+                        <div class="Skill-bar">
+                            <div class="Skill-progress"></div>
+                        </div>
+                    </div>
+
+                    <div class="Skill" data-label="skill-responsive">
+                        <h4 class="Skill-name">Responsive Design</h4>
+                        <div class="Skill-bar">
+                            <div class="Skill-progress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="Testimonials">
+            <div class="Testimonials-container">
+                <h2 class="Testimonials-title">Testimonios</h2>
+
+                <div class="Testimonials-grid">
+                    <blockquote class="Testimonial" data-label="testimonial-1">
+                        <p class="Testimonial-text">Excelente trabajo y atención al detalle en cada proyecto.</p>
+                        <footer class="Testimonial-author">- Cliente A</footer>
+                    </blockquote>
+
+                    <blockquote class="Testimonial" data-label="testimonial-2">
+                        <p class="Testimonial-text">Profesional, puntual y muy creativo en las soluciones.</p>
+                        <footer class="Testimonial-author">- Cliente B</footer>
+                    </blockquote>
+
+                    <blockquote class="Testimonial" data-label="testimonial-3">
+                        <p class="Testimonial-text">Recomendado para cualquier proyecto de desarrollo web.</p>
+                        <footer class="Testimonial-author">- Cliente C</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call To Action Section -->
+        <section id="contact" class="CTA">
+            <div class="CTA-container">
+                <h2 class="CTA-title">¿Listo para comenzar?</h2>
+                <p class="CTA-text">Contacta conmigo para discutir tu próximo proyecto</p>
+                <button class="CTA-button" data-action="contact">Ponte en contacto</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

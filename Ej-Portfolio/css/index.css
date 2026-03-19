@@ -1,0 +1,731 @@
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', 'Courier', monospace;
+    background-color: #fafafa;
+    color: #222;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ========================================
+   PAGE LAYOUT
+   ======================================== */
+
+.Page {
+    display: flex;
+}
+
+.Page-main {
+    flex: 1;
+    margin-left: 280px;
+}
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
+
+.Sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: #222;
+    color: #fafafa;
+    padding: 40px 30px;
+    z-index: 1000;
+    border-right: 1px solid #333;
+}
+
+.Sidebar-header {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 20px;
+}
+
+.Sidebar-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.Sidebar-menu {
+    list-style: none;
+}
+
+.Sidebar-item {
+    margin-bottom: 25px;
+}
+
+.Sidebar-link {
+    display: block;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    border-left: 2px solid transparent;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.Sidebar-link:hover {
+    border-left-color: #fafafa;
+    padding-left: 20px;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.Hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.Hero-content {
+    text-align: center;
+    max-width: 600px;
+    animation: heroFadeIn 1s ease forwards;
+}
+
+.Hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.Hero-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.Hero-button {
+    display: inline-block;
+    padding: 15px 50px;
+    background-color: #222;
+    color: #fafafa;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid #222;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: 'Courier New', 'Courier', monospace;
+}
+
+.Hero-button:hover {
+    background-color: #fafafa;
+    color: #222;
+}
+
+/* ========================================
+   PROJECTS SECTION
+   ======================================== */
+
+.Projects {
+    background-color: #fafafa;
+    padding: 80px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.Projects-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.Projects-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.Projects-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.Projects-description {
+    font-size: 1rem;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   CAROUSEL & CARDS
+   ======================================== */
+
+.Carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.Card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 40px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.Card:hover {
+    border-color: #222;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(40px);
+}
+
+.Card.Card--visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: cardSlideUp 0.6s ease forwards;
+}
+
+.Card-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ddd;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.Card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.Card-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+/* Card delays */
+.Card:nth-child(1) { --delay: 0s; }
+.Card:nth-child(2) { --delay: 0.1s; }
+.Card:nth-child(3) { --delay: 0.2s; }
+.Card:nth-child(4) { --delay: 0.3s; }
+.Card:nth-child(5) { --delay: 0.4s; }
+
+.Card.Card--visible {
+    animation-delay: var(--delay);
+}
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+
+.About {
+    background-color: #fff;
+    padding: 80px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.About-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.About-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.About-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    max-width: 700px;
+}
+
+/* ========================================
+   SERVICES SECTION
+   ======================================== */
+
+.Services {
+    background-color: #fafafa;
+    padding: 80px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.Services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.Services-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.Services-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.Services-description {
+    font-size: 1rem;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+.Services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.Service {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.4s ease;
+}
+
+.Service:hover {
+    border-color: #222;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.Service.Service--visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: elementSlideUp 0.6s ease forwards;
+}
+
+.Service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.Service-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+/* ========================================
+   SKILLS SECTION
+   ======================================== */
+
+.Skills {
+    background-color: #fff;
+    padding: 80px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.Skills-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.Skills-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.Skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.Skill {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.4s ease;
+}
+
+.Skill.Skill--visible {
+    opacity: 1;
+    transform: translateX(0);
+    animation: skillSlideIn 0.6s ease forwards;
+}
+
+.Skill-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.Skill-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
+
+.Skill-progress {
+    height: 100%;
+    background-color: #222;
+    width: 0%;
+    transition: width 1s ease 0.3s;
+}
+
+.Skill.Skill--visible .Skill-progress {
+    animation: skillProgress 1.2s ease 0.3s forwards;
+}
+
+/* Individual skill widths */
+.Skill:nth-child(1) { --width: 95%; }
+.Skill:nth-child(2) { --width: 90%; }
+.Skill:nth-child(3) { --width: 88%; }
+.Skill:nth-child(4) { --width: 85%; }
+
+.Skill.Skill--visible .Skill-progress {
+    width: var(--width);
+}
+
+/* ========================================
+   TESTIMONIALS SECTION
+   ======================================== */
+
+.Testimonials {
+    background-color: #fafafa;
+    padding: 80px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.Testimonials-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.Testimonials-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.Testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.Testimonial {
+    background-color: #fff;
+    border-left: 4px solid #222;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.4s ease;
+}
+
+.Testimonial:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.Testimonial.Testimonial--visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: testimonialSlideUp 0.6s ease forwards;
+}
+
+.Testimonial-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+    font-style: italic;
+}
+
+.Testimonial-author {
+    font-size: 0.9rem;
+    color: #666;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+
+.CTA {
+    background-color: #222;
+    color: #fafafa;
+    padding: 100px 40px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.CTA-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.CTA-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.CTA-text {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(-20px);
+    font-weight: 300;
+}
+
+.CTA-button {
+    padding: 18px 60px;
+    background-color: #fafafa;
+    color: #222;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid #fafafa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: 'Courier New', 'Courier', monospace;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.CTA-button:hover {
+    background-color: transparent;
+    color: #fafafa;
+}
+
+.CTA.CTA--visible .CTA-title {
+    opacity: 1;
+    transform: translateY(0);
+    animation: ctaFadeInDown 0.6s ease forwards;
+}
+
+.CTA.CTA--visible .CTA-text {
+    opacity: 1;
+    transform: translateY(0);
+    animation: ctaFadeInUp 0.6s ease 0.1s forwards;
+}
+
+.CTA.CTA--visible .CTA-button {
+    opacity: 1;
+    transform: translateY(0);
+    animation: ctaFadeInUp 0.6s ease 0.2s forwards;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes elementSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes skillSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes skillProgress {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--width);
+    }
+}
+
+@keyframes testimonialSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ctaFadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ctaFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .Page-main {
+        margin-left: 0;
+    }
+
+    .Sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #333;
+        padding: 20px;
+    }
+
+    .Sidebar-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .Sidebar-menu {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .Sidebar-item {
+        margin-bottom: 0;
+    }
+
+    .Hero-title {
+        font-size: 2.5rem;
+    }
+
+    .Projects-title {
+        font-size: 2rem;
+    }
+
+    .Carousel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .Hero {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .Hero-title {
+        font-size: 1.8rem;
+    }
+
+    .Projects {
+        padding: 40px 20px;
+    }
+
+    .Projects-title {
+        font-size: 1.5rem;
+    }
+
+    .Card {
+        padding: 20px;
+    }
+}
