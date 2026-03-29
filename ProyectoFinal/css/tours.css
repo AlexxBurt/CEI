@@ -1,0 +1,184 @@
+.Wrapper{
+    min-height: 100vh;
+    max-height: 100vh;
+    padding: 16vh 8vw;
+
+    background-color: grey;
+    /* background-color: black;
+    background-image: url('../assets/flora-hon-Xsw6D67jA5U-unsplash (1).jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 5rem;
+    justify-content: space-between;
+    align-items: end;
+    overflow: hidden;
+}
+.Wrapper-col{
+    /* max-height: 30rem; */
+    max-height: 25rem;
+}
+.Information{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 2rem;
+
+    font-size: var(--fs-regular);
+    color: var(--c-primary-100);
+}
+.Information-content{
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+.Information-title{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: .5rem;
+    position: sticky;
+    top: 0;
+}
+.Information-h2{
+    font-size: var(--fs-huge);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+}
+.Information-h3{
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+}
+.Information-p{
+    width: 100%;
+    max-height: 8.35rem;
+    overflow-y: auto;
+
+    transition: all 1s ease;
+}
+.Information-p:hover{
+    max-height: 19rem;
+}
+.Information-buttons{
+    width: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.25rem;
+}
+.Information-button{}
+.Information-a{}
+.Gallery{
+    min-height: 25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.Gallery-img{
+    min-height: 100%;
+    border: 6px solid var(--c-primary-20);
+    border-radius: var(--br-square);
+    /* background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    box-shadow: inset -20px -20px 50px 0px rgba(255, 255, 255, 25%),
+                inset 20px 20px 50px 1px rgba(0, 0, 0, 25%);
+    filter: brightness(1);
+    transition: all 1s ease;
+    overflow: hidden;
+}
+.Gallery:hover .Gallery-img{
+    filter: brightness(0.5);
+}
+.Gallery:hover .Gallery-img:hover{
+    scale: 1.1;
+    filter: brightness(1);
+}
+.Gallery-img--1{
+    /* background-image: url('../assets/nichika-sakurai-X9eoh7YkQCs-unsplash.jpg'); 
+    background-position: right center; */
+}
+.Gallery-img--2{
+   /* background-image: url('../assets/ben-george-Ks61I1kNFTY-unsplash.jpg'); */
+}
+
+
+
+/* ----------------------------- */
+/* Responsive pantallas grandes */
+/* --------------------------- */
+@media (min-width: 1600px){
+    .Gallery{
+        min-height: 30rem;
+    }
+
+}
+
+
+/* -------------------- */
+/* Responsive portatil */
+/* ------------------ */
+@media (max-width: 1328px){
+    .Information-p:hover{
+        max-height: 14.5rem;
+    }
+}
+
+
+/* ------------------------------ */
+/* Responsive pantallas pequeñas */
+/* ---------------------------- */
+@media (max-width: 960px){
+    .Wrapper{
+        padding: 10vh 8vw;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-content: end;
+    }
+    .Wrapper-col{
+        min-height: 10rem;
+    }
+    .Information{
+        width: 66%;
+        gap: 1.25rem
+    }
+    .Information-p{
+        max-height: 7.4rem;
+    }
+    .Information-p:hover{
+        /* max-height: 14.5rem; */
+    }
+    .Information-buttons{
+        gap: .5rem;
+    }
+}
+
+
+/* ------------------ */
+/* Responsive Tablet */
+/* ---------------- */
+@media (max-width: 768px){
+    .Wrapper{
+        padding: 6vh 6vw;
+    }
+    .Information{
+        width: 100%;
+    }
+}
+
+
+
+/* ----------------- */
+/* Responsive Móvil */
+/* --------------- */
+@media (max-width: 480px){
+    .Wrapper{
+        padding: 13vh 1.25rem;
+        align-content: space-between;
+        gap: 0;
+    }
+    .Wrapper-col{
+        min-height: 10rem;
+    }
+}
