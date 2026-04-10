@@ -2,22 +2,14 @@
     min-height: 100vh;
     max-height: 100vh;
     padding: 16vh 8vw;
-
-    background-color: grey;
-    /* background-color: black;
-    background-image: url('../assets/flora-hon-Xsw6D67jA5U-unsplash (1).jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
     display: grid;
-    grid-template-columns: 1.25fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 5rem;
     justify-content: space-between;
     align-items: end;
     overflow: hidden;
 }
 .Wrapper-col{
-    /* max-height: 30rem; */
     max-height: 25rem;
 }
 .Information{
@@ -25,7 +17,6 @@
     flex-direction: column;
     justify-content: end;
     gap: 2rem;
-
     font-size: var(--fs-regular);
     color: var(--c-primary-100);
 }
@@ -33,6 +24,17 @@
     display: flex;
     flex-flow: column;
     gap: 1rem;
+}
+.Information-texts{
+    max-height: 8.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    transition: all 1s ease;
+}
+.Information-content:hover .Information-texts{
+    max-height: 14rem;
 }
 .Information-title{
     display: flex;
@@ -50,16 +52,7 @@
     font-size: var(--fs-small);
     font-weight: var(--fw-bold);
     text-transform: uppercase;
-}
-.Information-p{
-    width: 100%;
-    max-height: 8.35rem;
-    overflow-y: auto;
-
-    transition: all 1s ease;
-}
-.Information-p:hover{
-    max-height: 19rem;
+    color: var(--c-primary-50);
 }
 .Information-buttons{
     width: fit-content;
@@ -77,58 +70,47 @@
 }
 .Gallery-img{
     min-height: 100%;
-    border: 6px solid var(--c-primary-20);
+    border: 6px solid var(--c-primary-25);
     border-radius: var(--br-square);
-    /* background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
-    box-shadow: inset -20px -20px 50px 0px rgba(255, 255, 255, 25%),
-                inset 20px 20px 50px 1px rgba(0, 0, 0, 25%);
     filter: brightness(1);
     transition: all 1s ease;
     overflow: hidden;
 }
 .Gallery:hover .Gallery-img{
     filter: brightness(0.5);
+    box-shadow:  -4px -4px 10px 4px var(--c-primary-10),
+                4px 4px 10px 4px var(--c-secondary-25);
 }
 .Gallery:hover .Gallery-img:hover{
     scale: 1.1;
     filter: brightness(1);
 }
-.Gallery-img--1{
-    /* background-image: url('../assets/nichika-sakurai-X9eoh7YkQCs-unsplash.jpg'); 
-    background-position: right center; */
-}
+.Gallery-img--1{}
 .Gallery-img--2{
-   /* background-image: url('../assets/ben-george-Ks61I1kNFTY-unsplash.jpg'); */
 }
 
 
 
-/* ----------------------------- */
 /* Responsive pantallas grandes */
-/* --------------------------- */
 @media (min-width: 1600px){
     .Gallery{
         min-height: 30rem;
     }
-
+    .Information-content:hover .Information-texts{
+        max-height: 19rem;
+    }
 }
 
 
-/* -------------------- */
 /* Responsive portatil */
-/* ------------------ */
 @media (max-width: 1328px){
-    .Information-p:hover{
+    .Information-texts:hover{
         max-height: 14.5rem;
     }
 }
 
 
-/* ------------------------------ */
 /* Responsive pantallas pequeñas */
-/* ---------------------------- */
 @media (max-width: 960px){
     .Wrapper{
         padding: 10vh 8vw;
@@ -144,10 +126,10 @@
         gap: 1.25rem
     }
     .Information-p{
-        max-height: 7.4rem;
+        margin-bottom: .75rem;
     }
-    .Information-p:hover{
-        /* max-height: 14.5rem; */
+    .Information-texts{
+        max-height: 7.4rem;
     }
     .Information-buttons{
         gap: .5rem;
@@ -155,9 +137,7 @@
 }
 
 
-/* ------------------ */
 /* Responsive Tablet */
-/* ---------------- */
 @media (max-width: 768px){
     .Wrapper{
         padding: 6vh 6vw;
@@ -169,9 +149,7 @@
 
 
 
-/* ----------------- */
 /* Responsive Móvil */
-/* --------------- */
 @media (max-width: 480px){
     .Wrapper{
         padding: 13vh 1.25rem;

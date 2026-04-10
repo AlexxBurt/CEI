@@ -7,65 +7,57 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/styles.css">
+        
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/tours.css">
         <link rel="stylesheet" href="css/footer.css">
         
         <!-- JS -->
-        <!-- <script src="js/header.js" defer></script> -->
-        <!-- Needs bug fix -->
+        <script src="js/main.js" defer></script>
         <script src="js/tours.js" defer></script>
-        <script src="js/footer.js" defer></script>
         
         <title>TRAVLR: Tours</title>
     </head>
     <body>
 
-        <!-------------------------->
-        <!-- El Header lo traemos -->
-        <!-- usando JavaScript ----->
-        <!-------------------------->
+        <!-- El Header lo traemos usando JavaScript ----->
         <header class="Header"></header>
 
         <main>
             <h1 class="u-h1">TRAVLR</h1>
             <div class="Wrapper">
                 <div class="Wrapper-col Information">
+                    <!-- El texto de los encabezados y de los párrafos viene del JSON -->
                     <section class="Information-content">
                         <header class="Information-title">
-                            <h2 class="Information-h2">Nombre del Tour</h2>
-                            <h3 class="Information-h3">Tours ${Nombre del
-                                país}</h3>
+                            <h2 class="Information-h2"></h2>
+                            <h3 class="Information-h3"></h3>
                         </header>
-                        <p class="Information-p">
-                            <!-- Info detallada sobre el Tour -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eius deleniti qui iste soluta quaerat aspernatur tempora est, iusto dolorem necessitatibus hic mollitia odit aperiam repudiandae ex iure dignissimos dolor deserunt. Cupiditate architecto adipisci, expedita, fuga nisi eius voluptatum aliquam voluptas explicabo at porro, omnis laudantium dolore esse. Ipsum officia nihil beatae! Facere ut autem libero officia qui.
-                            <br><br>
-                            Molestiae labore laudantium quia, eligendi numquam ullam vitae a quos magnam? Cum quidem sapiente voluptatum molestias unde quo harum expedita deleniti corporis aut, facilis vitae illum, et maxime voluptatibus dolorum veritatis quas nihil eaque nostrum distinctio qui. Atque iusto suscipit commodi, et temporibus repellat quos dolor aut, non a perferendis.
-                            <br><br>
-                            Error, consequatur sit. Quibusdam ut quas ab quia non, voluptates consequatur hic debitis et illo, vero recusandae cumque iste eos repellat soluta eligendi ipsam officia cupiditate. Reiciendis neque ab cum totam obcaecati iste iusto in dicta corporis veritatis. Obcaecati nemo laboriosam praesentium blanditiis incidunt debitis non iste perspiciatis! Provident quae ratione consectetur deserunt obcaecati suscipit dolores commodi quos, pariatur laudantium eaque accusamus expedita, ullam iste. Quam nesciunt, ipsa, quos ab harum odit quas quaerat odio minus illum optio corrupti dolorem! Sit praesentium sunt debitis enim necessitatibus ex ut quia assumenda voluptas corrupti!
-                        </p>
+                        <div class="Information-texts">
+                            <p class="Information-p Information-p--1"></p>
+                            <p class="Information-p Information-p--2"></p>
+                            <p class="Information-p Information-p--3"></p>
+                        </div>
                     </section>
                     <div class="Information-buttons">
-                        <button class="Information-button u-primary">Añadir actividad</button>
-                        <a href="#" class="Information-next u-secondary" title="Hoteles">Siguiente</a>
+                        <!-- El texto del botón viene por JavaScript -->
+                        <button class="Information-button u-primary"></button>
+                        <a href="hoteles.html" class="Information-next u-secondary" title="Hoteles">Siguiente</a>
                     </div>
                 </div>
                 <div class="Wrapper-col Gallery">
+                    <!-- Las imágenes de los tours vienen del JSON -->
                     <picture>
-                        <img class="Gallery-img Gallery-img--1" src="" alt="Imagen del tour 2">
+                        <img class="Gallery-img" alt="Imagen del tour 2">
                     </picture>
                     <picture>
-                        <img class="Gallery-img Gallery-img--2" src="" alt="Imagen del tour 3">
+                        <img class="Gallery-img" alt="Imagen del tour 3">
                     </picture>
                 </div>
             </div>
         </main>
 
-        <!-------------------------->
-        <!-- El Footer lo traemos -->
-        <!-- usando JavaScript ----->
-        <!-------------------------->
+        <!-- El Footer lo traemos usando JavaScript ----->
         <footer class="Footer"></footer>
 
     </body>

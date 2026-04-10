@@ -1,44 +1,32 @@
 'use strict'
 
-const page = document.documentElement
-const intro = document.querySelector(`.Wrapper`)
-const sentence = document.querySelectorAll(`.Wrapper-text`)
-const word = document.querySelectorAll(`.Wrapper-word`)
 
-const SENTENCE_DELAY = 500
-const WORD_DELAY = 300
-const FINAL_FADE_TIME = 2000
+// Animación del texto de intro y redirección final a la página principal
+
+const page = document.documentElement
+const wrapper = document.querySelector(`.Wrapper`)
+const sentences = [...document.querySelectorAll(`.Wrapper-text`)]
+const words = [...document.querySelectorAll(`.Wrapper-word`)]
+let sentencesDelay = 500
+let wordsDelay = 300
+let transitionFade = 2000
 
 window.addEventListener(`DOMContentLoaded`, () => {
-    word.forEach(( span ) => {
-        span.classList.remove(`isActive`)
-    })
+    words.forEach(words => words.classList.remove(`isActive`))
 
-    let lastStartDelay = 0
-
-    sentence.forEach(( sentenceBlock, i ) => {
-        const words = sentenceBlock.querySelectorAll(`.Wrapper-word`)
-
-        words.forEach(( span, idx ) => {
-            const startDelay = ( i * SENTENCE_DELAY ) + ( ( idx + 1 ) * WORD_DELAY )
-            if( startDelay > lastStartDelay ) lastStartDelay = startDelay
-
-            setTimeout(() => {
-                span.classList.add(`isActive`)
-            }, startDelay)
+    let lastDelay = 0
+    sentences.forEach((sentence, i) => {
+        [...sentence.querySelectorAll(`.Wrapper-word`)].forEach((word, j) => {
+            const delay = i * sentencesDelay + (j + 1) * wordsDelay
+            lastDelay = Math.max(lastDelay, delay)
+            setTimeout(() => word.classList.add(`isActive`), delay)
         })
     })
 
+    wrapper.style.opacity = `1`
     setTimeout(() => {
-        intro.style.opacity = `1`
-    })
-
-    setTimeout(() => {
-        page.style.transition = `opacity ${ FINAL_FADE_TIME }ms cubic-bezier(0.22, 1, 0.36, 1)`
+        page.style.transition = `opacity ${transitionFade}ms cubic-bezier(0.22, 1, 0.36, 1)`
         page.style.opacity = `0`
-
-        setTimeout(() => {
-            window.location.href = `destinos.html`
-        }, FINAL_FADE_TIME)
-    }, lastStartDelay + 3000)
+        setTimeout(() => (window.location.href = `index.html`), transitionFade)
+    }, lastDelay + 3000)
 })

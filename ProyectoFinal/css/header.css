@@ -3,14 +3,12 @@
     top: 5%;
     left: 0;
     right: 0;
-    
-    z-index: 1;
+    z-index: 2;
 }
 .Header-nav{}
 .Header-ul{
     max-width: 90rem;
     margin: auto;
-
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -25,12 +23,13 @@
 }
 .Header-li--logo{
     width: fit-content;
-    color: var(--c-primary-100);
+    color: var(--c-primary-75);
     font-size: var(--fs-extrabig);
 }
 .Header-a{
     padding: .625rem 1.25rem;
     cursor: pointer;
+    transition: color .4s ease;
 }
 /* .Header-a{
     padding: .625rem 1.25rem;
@@ -38,9 +37,7 @@
     pointer-events: none;
 } */
 .Header-a:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: var(--c-primary-100);
+    color: var(--c-primary-75);
 }
 .Header-a.isActive{
     color: var(--c-primary-100);
@@ -63,20 +60,14 @@
 }
 
 
-/* ------------------ */
-/* Responsive Tablet */
-/* ---------------- */
 
+/* Responsive Tablet */
 @media (max-width: 1024px){
     
 }
 
 
-
-/* ------------------------------ */
 /* Responsive Pantallas pequeñas */
-/* ---------------------------- */
-
 @media (max-width: 768px){
     .Header-li--logo{
         display: none;
@@ -85,10 +76,7 @@
 
 
 
-/* ----------------- */
 /* Responsive Móvil */
-/* --------------- */
-
 @media (max-width: 480px){
     .Header{
         /*
@@ -97,13 +85,11 @@
         max-width: 92%;
         */
         width: 92%;
-        background-color: #888888a0;
         margin: auto;
         border-radius: var(--br-round);
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-evenly;
-        top: 92%;
     }
     .Header-h1{
         display: none;

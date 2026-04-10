@@ -1,0 +1,150 @@
+.Wrapper{
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.Slider{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row: auto;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    transition: all 1s cubic-bezier(.62,.24,.33,1);
+}
+.Slider-frame{
+    min-height: 100vh;
+    background-color: grey;
+    padding: 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s cubic-bezier(.62,.24,.33,1);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+}
+.Slider-frame--1{
+    background: url('../assets/images/egipto.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Slider-frame--2{
+    background: url('../assets/images/zimbabue.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Slider-frame--3{
+    background: url('../assets/images/islandia.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Slider-frame--4{
+    background: url('../assets/images/austria.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Slider-frame--5{
+    background: url('../assets/images/japon.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Slider-frame--6{
+    background: url('../assets/images/vietnam.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Slider-frame--7{
+    background: url('../assets/images/seychelles.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Slider-frame--8{
+    background: url('../assets/images/indonesia.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Slider-button{
+    max-width: fit-content;
+}
+.Slider-text{
+    color: var(--c-primary-100);
+    font-size: var(--fs-extrabig);
+    text-align: center;
+}
+
+
+.Selector{
+    width: fit-content;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: calc( 50vh - 10rem );
+    right: 8%;
+    /* z-index: 1; */
+}
+.Selector-dot{
+    width: .75rem;
+    min-height: .75rem;
+    background-color: var(--c-primary-25);
+    border-radius: var(--br-round);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.Selector-dot:hover{
+    background-color: var(--c-primary-100);
+}
+.Selector-dot.isActive{
+    scale: 1.25;
+    background-color: var(--c-primary-100);
+}
+
+
+/* Responsive portatil */
+@media (max-width: 1300px){
+    .Slider-frame{
+        padding: 7%;
+    }
+}
+
+
+/* Responsive Tablet */
+@media (max-width: 1024px){
+
+}
+
+
+/* Responsive Móvil */
+@media (max-width: 480px){
+    .Slider-frame--1{
+        background: url('../assets/images/egipto-mobile.webp');
+    }
+    .Slider-h2{
+        padding: 0 3.5rem;
+        font-size: 1.125rem;
+        top: 52%;
+        left: 0;
+        text-align: center;
+    }
+    .Slider-button{
+        top: 62%;
+    }
+}
